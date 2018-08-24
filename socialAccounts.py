@@ -44,3 +44,10 @@ class SocialAccounts:
             if account.social_account==social_account:
                 return True
         return False
+
+    @classmethod
+    def display_social_accounts(cls):
+        '''
+        method that now returns the stored social accounts logins
+        '''
+        return cls.social_accounts_list

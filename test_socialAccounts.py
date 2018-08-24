@@ -76,5 +76,11 @@ class TestSocialAccounts(unittest.TestCase):
         account_exists= SocialAccounts.social_account_exists("musical.ly")
         self.assertTrue(account_exists)
 
+    def test_display_all_social_accounts(self):
+        '''
+        method to show all the saved social accounts
+        '''
+        self.assertEqual(SocialAccounts.display_social_accounts(), SocialAccounts.social_accounts_list)
+
 if __name__=='__main__':
     unittest.main()
