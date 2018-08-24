@@ -46,7 +46,7 @@ def display_all_social_accounts():
     return SocialAccounts.display_social_accounts()
 
 def main():
-    print("Hello & welcome to your  Passwords Safelock. What is your name?")
+    print("Hello & welcome to your Passwords Safelock. What is your name?")
     user_name = input()
     print(f"Hello {user_name}. what would you like to do?")
     print('\n')
@@ -56,11 +56,11 @@ def main():
         if short_code == 'cl':
                             print("New Contact")
                             print("-"*10)
-                            print ("First name ....")
+                            print ("Account name e.g twitter,instagram,facebook")
                             social_acc = input()
-                            print("Last name ...")
+                            print("Account username ...")
                             acc_username = input()
-                            print("Phone number ...")
+                            print("account password ...")
                             acc_password = input()
                             print("Email address ...")
                             pass_length = input()
@@ -73,7 +73,7 @@ def main():
                                     print("Here is a list of all your saved logins")
                                     print('\n')
                                     for social_accounts in display_all_social_accounts():
-                                            print(f"{social_accounts.social_account} {social_accounts.social_account_username} .....{social_accounts.social_account_password}")
+                                            print(f"{social_accounts.social_account} {social_accounts.social_account_username} {social_accounts.social_account_password}")
                                     print('\n')
                             else:
                                     print('\n')
@@ -86,8 +86,8 @@ def main():
                                     search_social_account = find_social_account(search_account)
                                     print(f"{search_social_account.social_account} {search_social_account.social_account_username}")
                                     print('-' * 20)
-                                    print(f"Phone number.......{search_social_account.phone_number}")
-                                    print(f"Email address.......{search_social_account.email}")
+                                    print(f"Account.......{search_social_account.social_account}")
+                                    print(f"Account Username.......{search_social_account.social_account_username}")
                             else:
                                     print("That account does not exist")
         elif short_code == "ex":
