@@ -69,10 +69,10 @@ def main():
                             print(f" {social_acc} Profile created")
                             print ('\n')
         elif short_code == 'dc':
-                            if display_social_accounts():
+                            if display_all_social_accounts():
                                     print("Here is a list of all your contacts")
                                     print('\n')
-                                    for contact in display_social_accounts():
+                                    for contact in display_all_social_accounts():
                                             print(f"{contact.first_name} {contact.last_name} .....{contact.phone_number}")
                                     print('\n')
                             else:
@@ -81,15 +81,15 @@ def main():
                                     print('\n')
         elif short_code == 'fc':
                             print("Enter the number you want to search for")
-                            search_number = input()
-                            if check_existing_contacts(search_number):
-                                    search_contact = find_contact(search_number)
-                                    print(f"{search_contact.first_name} {search_contact.last_name}")
+                            search_account = input()
+                            if check_existing_accounts(search_account):
+                                    search_social_account = find_social_account(search_account)
+                                    print(f"{search_social_account.social_account} {search_social_account.social_account_username}")
                                     print('-' * 20)
-                                    print(f"Phone number.......{search_contact.phone_number}")
-                                    print(f"Email address.......{search_contact.email}")
+                                    print(f"Phone number.......{search_social_account.phone_number}")
+                                    print(f"Email address.......{search_social_account.email}")
                             else:
-                                    print("That contact does not exist")
+                                    print("That account does not exist")
         elif short_code == "ex":
                             print("Bye .......")
                             break
