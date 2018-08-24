@@ -65,6 +65,16 @@ class TestSocialAccounts(unittest.TestCase):
         found_social_account= SocialAccounts.find_account_by_name('musical.ly')
         self.assertEqual(found_social_account.social_account_username, test_social_account.social_account_username)
 
+    def test_social_account_exists(self):
+        '''
+        we want to return a boolean if we cannot find a contact
+        '''
+        self.new_social_account.save_social_account()
+        test_social_account = SocialAccounts("musical.ly","cherucole", "passmusic", "9") #new account to save
+        test_social_account.save_social_account()
+
+        account_exists= SocialAccounts.social_account_exists("musical.ly")
+        self.assertTrue(account_exists)
 
 if __name__=='__main__':
     unittest.main()

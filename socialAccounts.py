@@ -34,3 +34,13 @@ class SocialAccounts:
         for account in cls.social_accounts_list:
             if account.social_account== social_account:
                 return account
+
+    @classmethod
+    def social_account_exists(cls,social_account):
+        '''
+        method that checks if a social account exists in the list we have cretaed
+        '''
+        for account in cls.social_accounts_list:
+            if account.social_account==social_account:
+                return True
+        return False
