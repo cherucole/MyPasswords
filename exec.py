@@ -12,7 +12,22 @@ def create_user_accounts(your_name, your_password):
     new_user_account = UserAccounts(your_name, your_password)
     return new_user_account
 
-def save_user_accounts(self)
+def save_user_accounts(user_account):
+    '''
+    allows us to save the system users once they create their logins
+    :param user_account:
+    :return:
+    '''
+    user_account.save_user_account
+
+def display_user_accounts():
+    """
+    To view all system users that have been saved
+    """
+    return UserAccounts.display_user_accounts()
+
+
+
 
 def create_social_account(account, username, password, passlength):
     '''
