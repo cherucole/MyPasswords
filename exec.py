@@ -78,6 +78,52 @@ def main():
     user_name = input()
     print(f"Hello {user_name}. what would you like to do?")
     print('\n')
+
+    while True:
+        print("""Use these short codes:
+                  create - create new safelock account
+                  login - log in to your safelock account
+                  logout - log out of your safelock account
+                  exit - exit safelock app.""")
+        short_code = input().lower()
+        print("_" * 100)
+        if short_code == "create":
+            print("New Password Locker Account")
+            print("_" * 20)
+
+            print("Enter first name -")
+            f_name = input()
+
+            print("Enter last name -")
+            l_name = input()
+
+            print("""
+                      We can generate a password for you. Use:
+                      g- to generate a password
+                      m- to set your own.
+                      """)
+            pass_code = input().lower()
+            print("__" * 20)
+            if pass_code == "g":
+                password_length = int(
+                    input("How long do you want your password - "))
+                password = password_gen(password_length)
+                print(f"Your new password is {password}")
+            else:
+                print("Write a password of your own. We'll store it for you")
+                password = input()
+
+            save_users(create_user(f_name, l_name, password))
+
+            print("")
+            print(
+                f"""New account created for - {f_name} {l_name} your account password is - {password}""")
+            print("")
+            print("You can now create your password profiles")
+
+
+
+
     while True:
         print("Use these short codes : \n cl : create new logins, dl : display saved logins, sl : search for a login, ex : exit the Safelock app ")
         short_code = input().lower()
