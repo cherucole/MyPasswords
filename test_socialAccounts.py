@@ -15,13 +15,14 @@ class TestSocialAccounts(unittest.TestCase):
         '''
         this setup method is run before each test case is executed
         '''
-        self.new_social_account= SocialAccounts("twitter", "twitterPassword", "15") #creating the social account object
+        self.new_social_account= SocialAccounts("twitter", "cherucole", "twitterPassword", "15") #creating the social account object
 
     def test_init(self):
         '''
         testing to ensure the social account object is initialized correctly
         '''
-        self.assertEqual(self.new_social_account.social_account_name, "twitter")
+        self.assertEqual(self.new_social_account.social_account, "twitter")
+        self.assertEqual(self.new_social_account.social_account_username, "cherucole")
         self.assertEqual(self.new_social_account.social_account_password,"twitterPassword")
         self.assertEqual(self.new_social_account.password_length,"15")
 
@@ -38,7 +39,7 @@ class TestSocialAccounts(unittest.TestCase):
         test to check if we can save multiple social account details
         '''
         self.new_social_account.save_social_account()
-        test_social_account = SocialAccounts("musical.ly", "passmusic", "9") #new account to save
+        test_social_account = SocialAccounts("musical.ly","cherucole", "passmusic", "9") #new account to save
         test_social_account.save_social_account()
         self.assertEqual(len(SocialAccounts.social_accounts_list),2)
 
@@ -47,11 +48,16 @@ class TestSocialAccounts(unittest.TestCase):
         this is to ensure we can remove a social account from our list
         '''
         self.new_social_account.save_social_account()
-        test_social_account = SocialAccounts("musical.ly", "passmusic", "9") #new account to save
+        test_social_account = SocialAccounts("musical.ly","cherucole", "passmusic", "9") #new account to save
         test_social_account.save_social_account()
 
         self.new_social_account.delete_account()
         self.assertEqual(len(SocialAccounts.social_accounts_list),1)
+
+    def test_find_account_by_name(self):
+        '''
+        this is to enable users search their credentials by social account name
+        '''
 
 if __name__=='__main__':
     unittest.main()
