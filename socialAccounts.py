@@ -18,3 +18,9 @@ class SocialAccounts:
         creating the method that saves social accounts
         '''
         SocialAccounts.social_accounts_list.append(self)
+
+    def delete_social_account(self):
+        '''
+        creating the method that deletes the account
+        '''
+        SocialAccounts.social_accounts_list.remove(self)

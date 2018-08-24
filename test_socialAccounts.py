@@ -6,6 +6,9 @@ class TestSocialAccounts(unittest.TestCase):
     Test class that we define and test methods to use in the SocialAccount class
     '''
     def tearDown(self):
+        '''
+        this is to ensure each time the app is executed the list is clean
+        '''
         SocialAccounts.social_accounts_list=[]
 
     def setUp(self):
@@ -39,6 +42,16 @@ class TestSocialAccounts(unittest.TestCase):
         test_social_account.save_social_account()
         self.assertEqual(len(SocialAccounts.social_accounts_list),2)
 
+    def test_delete_social_account(self):
+        '''
+        this is to ensure we can remove a social account from our list
+        '''
+        self.new_social_account.save_social_account()
+        test_social_account = SocialAccounts("musical.ly", "passmusic", "9") #new account to save
+        test_social_account.save_social_account()
+
+        self.new_social_account.delete_account()
+        self.assertEqual(len(SocialAccounts.social_accounts_list),1)
 
 if __name__=='__main__':
     unittest.main()
