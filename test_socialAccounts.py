@@ -51,13 +51,20 @@ class TestSocialAccounts(unittest.TestCase):
         test_social_account = SocialAccounts("musical.ly","cherucole", "passmusic", "9") #new account to save
         test_social_account.save_social_account()
 
-        self.new_social_account.delete_account()
+        self.new_social_account.delete_social_account()
         self.assertEqual(len(SocialAccounts.social_accounts_list),1)
 
     def test_find_account_by_name(self):
         '''
-        this is to enable users search their credentials by social account name
+        this is to enable users search their credentials by social account name e.g twitter and display the logins
         '''
+        self.new_social_account.save_social_account()
+        test_social_account = SocialAccounts("musical.ly","cherucole", "passmusic", "9") #new account to save
+        test_social_account.save_social_account()
+
+        found_social_account= SocialAccounts.find_account_by_name('musical.ly')
+        self.assertEqual(found_social_account.social_account_username, test_social_account.social_account_username)
+
 
 if __name__=='__main__':
     unittest.main()
