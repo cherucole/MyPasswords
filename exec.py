@@ -46,14 +46,14 @@ def display_all_social_accounts():
     return SocialAccounts.display_social_accounts()
 
 def main():
-    print("Hello Welcome to your contact list. What is your name?")
+    print("Hello & welcome to your  Passwords Safelock. What is your name?")
     user_name = input()
     print(f"Hello {user_name}. what would you like to do?")
     print('\n')
     while True:
-        print("Use these short codes : cc - create a new contact, dc - display contacts, fc -find a contact, ex -exit the contact list ")
+        print("Use these short codes : cl - create new logins, dl - display saved logins, sl -search for a login, ex -exit the Safelock app ")
         short_code = input().lower()
-        if short_code == 'cc':
+        if short_code == 'cl':
                             print("New Contact")
                             print("-"*10)
                             print ("First name ....")
@@ -68,19 +68,19 @@ def main():
                             print ('\n')
                             print(f" {social_acc} Profile created")
                             print ('\n')
-        elif short_code == 'dc':
+        elif short_code == 'dl':
                             if display_all_social_accounts():
-                                    print("Here is a list of all your contacts")
+                                    print("Here is a list of all your saved logins")
                                     print('\n')
                                     for social_accounts in display_all_social_accounts():
                                             print(f"{social_accounts.social_account} {social_accounts.social_account_username} .....{social_accounts.social_account_password}")
                                     print('\n')
                             else:
                                     print('\n')
-                                    print("You dont seem to have any contacts saved yet")
+                                    print("No saved social media logins yet")
                                     print('\n')
-        elif short_code == 'fc':
-                            print("Enter the number you want to search for")
+        elif short_code == 'sl':
+                            print("Enter the social account type you want to search for")
                             search_account = input()
                             if check_existing_accounts(search_account):
                                     search_social_account = find_social_account(search_account)
