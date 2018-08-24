@@ -1,3 +1,4 @@
+import pyperclip
 class SocialAccounts:
     """
         Class that generates new instances of user accounts
@@ -51,3 +52,11 @@ class SocialAccounts:
         method that now returns the stored social accounts logins
         '''
         return cls.social_accounts_list
+
+    # @classmethod
+    # def copy_username(cls,social_account):
+    #     '''
+    #     this is a method to allow us copy the logins to clipboard
+    #     '''
+    #     social_account_found= SocialAccounts.find_account_by_name(social_account)
+    #     pyperclip.copy(social_account_found.social_account_username)

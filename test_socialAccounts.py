@@ -1,3 +1,4 @@
+import pyperclip
 import unittest # Importing the unittest module
 from socialAccounts import SocialAccounts
 
@@ -21,8 +22,8 @@ class TestSocialAccounts(unittest.TestCase):
         '''
         testing to ensure the social account object is initialized correctly
         '''
-        self.assertEqual(self.new_social_account.social_account, "twitter")
-        self.assertEqual(self.new_social_account.social_account_username, "cherucole")
+        self.assertEqual(self.new_social_account.social_account,"twitter")
+        self.assertEqual(self.new_social_account.social_account_username,"cherucole")
         self.assertEqual(self.new_social_account.social_account_password,"twitterPassword")
         self.assertEqual(self.new_social_account.password_length,"15")
 
@@ -81,6 +82,15 @@ class TestSocialAccounts(unittest.TestCase):
         method to show all the saved social accounts
         '''
         self.assertEqual(SocialAccounts.display_social_accounts(), SocialAccounts.social_accounts_list)
+
+    # def test_copy_username(self):
+    #     '''
+    #     Test to confirm we are copying the username from a found account
+    #     '''
+    #     self.new_social_account.save_social_account()
+    #     SocialAccounts.copy_username("twitter")
+    #
+    #     self.assertEqual(self.new_social_account.social_account_username,pyperclip.paste())
 
 if __name__=='__main__':
     unittest.main()
