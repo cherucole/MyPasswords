@@ -6,7 +6,7 @@ class UserAccounts:
 
     def __init__(self, account_name, account_password):
         '''
-        __init__ method that helps us define properties for our objects.
+        defining structure of the useraccount object
         '''
 
         self.account_name = account_name
@@ -14,14 +14,14 @@ class UserAccounts:
 
     def save_user_account(self):
         """
-        save_user method saves user objects into user_list
+        method to enable the system save and store user accounts
         """
         #
         UserAccounts.users_list.append(self)
 
     def delete_user_account(self):
         """
-        delete_user method delete a saved user from the user_list.
+        method to allow deleting of user accounts.
         """
         UserAccounts.users_list.remove(self)
 
