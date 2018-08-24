@@ -72,8 +72,8 @@ def main():
                             if display_all_social_accounts():
                                     print("Here is a list of all your contacts")
                                     print('\n')
-                                    for contact in display_all_social_accounts():
-                                            print(f"{contact.first_name} {contact.last_name} .....{contact.phone_number}")
+                                    for social_accounts in display_all_social_accounts():
+                                            print(f"{social_accounts.social_account} {social_accounts.social_account_username} .....{social_accounts.user_account_password}")
                                     print('\n')
                             else:
                                     print('\n')
