@@ -51,11 +51,11 @@ def main():
     print(f"Hello {user_name}. what would you like to do?")
     print('\n')
     while True:
-        print("Use these short codes : cl - create new logins, dl - display saved logins, sl -search for a login, ex -exit the Safelock app ")
+        print("Use these short codes : \n cl : create new logins, dl : display saved logins, sl : search for a login, ex : exit the Safelock app ")
         short_code = input().lower()
         if short_code == 'cl':
-                            print("New Contact")
-                            print("-"*10)
+                            print("New Social Media Logins")
+                            print("="*40)
                             print ("Account name e.g twitter,instagram,facebook")
                             social_acc = input()
                             print("Account username ...")
@@ -89,7 +89,7 @@ def main():
                                     print(f"Account.......{search_social_account.social_account}")
                                     print(f"Account Username.......{search_social_account.social_account_username}")
                             else:
-                                    print("That account does not exist")
+                                    print("That social meddia account does not exist")
         elif short_code == "ex":
                             print("Bye .......")
                             break
