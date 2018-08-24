@@ -1,5 +1,18 @@
 #!/usr/bin/env python3.7
 from socialAccounts import SocialAccounts
+from userAccounts import UserAccounts
+
+def create_user_accounts(your_name, your_password):
+    '''
+    to allow us create users to login and use the system
+    :param your_name:
+    :param your_password:
+    :return:
+    '''
+    new_user_account = UserAccounts(your_name, your_password)
+    return new_user_account
+
+def save_user_accounts(self)
 
 def create_social_account(account, username, password, passlength):
     '''
