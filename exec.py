@@ -163,18 +163,8 @@ def main():
                         print ('\n')
                         print(f" {social_acc} Profile created")
                         print ('\n')
-                    elif short_code == 'dl':
-                        if display_all_social_accounts():
-                            print("Here is a list of all your saved logins")
-                        print('\n')
-                    for social_accounts in display_all_social_accounts():
-                                print(f"Account: {social_accounts.social_account}, Username: {social_accounts.social_account_username}, Password: {social_accounts.social_account_password}")
-                    print('\n')
-                else:
-                        print('\n')
-                        print("No saved social media logins yet")
-                        print('\n')
-            elif short_code == 'sl':
+
+                    elif short_code == 'sl':
                         print("Enter the social account type you want to search for")
                         search_account = input()
                         if check_existing_accounts(search_account):
@@ -183,7 +173,19 @@ def main():
                         print('-' * 20)
                         print(f"Account: {search_social_account.social_account}")
                         print(f"Username: {search_social_account.social_account_username}")
-            else:
+                    elif short_code == 'dl':
+                        if display_all_social_accounts():
+                            print("Here is a list of all your saved logins")
+                        print('\n')
+                        for social_accounts in display_all_social_accounts():
+                                print(f"Account: {social_accounts.social_account}, Username: {social_accounts.social_account_username}, Password: {social_accounts.social_account_password}")
+                        print('\n')
+                    else:
+                        print('\n')
+                        print("No saved social media logins yet")
+                        print('\n')
+
+                else:
                         print("That social media account does not exist")
                         print(' ')
         elif short_code == 'copy':
