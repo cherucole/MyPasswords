@@ -33,7 +33,7 @@ def user_authentication(account_name, account_password):
     confirm_app_user=UserAccounts.confirm_app_user(account_name, account_password)
     return confirm_app_user
 
-def auto_password_generation():
+def generate_acc_password():
     '''
     automatically generate the user password
     :return:
@@ -150,16 +150,16 @@ def main():
                             print("-" * 70)
                             if password_options == 'ep':
                                 print(" ")
-                                password = input('Enter your password: ').strip()
+                                social_account_password = input('Enter your password: ').strip()
                                 break
                             elif password_options == 'gp':
-                                password = generate_password()
+                                social_account_password = generate_acc_password()
                                 break
                             elif password_options == 'ex':
                                 break
                             else:
                                 print('Sorry! Enter given codes.')
-                        save_social_accounts(create_social_account(social_acc,acc_username,password)) # create and save new contact.
+                        save_social_accounts(create_social_account(social_acc,acc_username,social_account_password)) # create and save new contact.
                         print ('\n')
                         print(f" {social_acc} Profile created")
                         print ('\n')

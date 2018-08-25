@@ -31,7 +31,7 @@ class SocialAccounts:
         '''
         SocialAccounts.social_accounts_list.remove(self)
 
-    def generate_acc_password(self):
+    def generate_acc_password():
         '''
         Function to generate random passwords for social media accounts
         '''
