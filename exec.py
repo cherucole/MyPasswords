@@ -137,11 +137,29 @@ def main():
                         social_acc = input()
                         print("Account username ...")
                         acc_username = input()
-                        print("account password ...")
-                        acc_password = input()
-                        print("Account email address ...")
-                        pass_length = input()
-                        save_social_accounts(create_social_account(social_acc,acc_username,acc_password)) # create and save new contact.
+                        # print("account password ...")
+                        # acc_password = input()
+                        # print("Account email address ...")
+                        # pass_length = input()
+                        while True:
+                            print(' ')
+                            print("-" * 70)
+                            print(
+                                'Please choose an option for entering a password: \n ep-enter existing password \n gp-auto-generate password \n ex-exit')
+                            password_options = input('Enter an option: ').lower().strip()
+                            print("-" * 70)
+                            if password_options == 'ep':
+                                print(" ")
+                                password = input('Enter your password: ').strip()
+                                break
+                            elif password_options == 'gp':
+                                password = generate_password()
+                                break
+                            elif password_options == 'ex':
+                                break
+                            else:
+                                print('Sorry! Enter given codes.')
+                        save_social_accounts(create_social_account(social_acc,acc_username,password)) # create and save new contact.
                         print ('\n')
                         print(f" {social_acc} Profile created")
                         print ('\n')
