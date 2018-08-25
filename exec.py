@@ -124,66 +124,52 @@ def main():
                 print(f'Welcome {account}. Please choose an option to continue.')
                 print(' ')
                 while True:
-                    print("-"*70)
-                    print('Navigation codes: \n cc-Create Social Media credentials\n dc-Display Credentials \n copy-Copy Password \n ex-Exit')
-                    short_code = input('Choose an option: ').lower().strip()
-                    print("-"*70)
-                    if short_code == 'ex':
-                        print(" ")
-                        print(f'Goodbye {user_name}')
-                        break
-                    elif short_code == 'cc':
+                    print("Use these short codes : \n cl : create new logins, dl : display saved logins, sl : search for a login, ex : exit the Safelock app ")
+                    short_code = input().lower()
+                    if short_code == 'cl':
+                        print("New Social Media Logins")
+                        print("="*40)
+                        print ("Account name e.g twitter,instagram,facebook")
+                        social_acc = input()
+                        print("Account username ...")
+                        acc_username = input()
+                        print("account password ...")
+                        acc_password = input()
+                        print("Account email address ...")
+                        pass_length = input()
+                        save_social_accounts(create_social_account(social_acc,acc_username,acc_password)) # create and save new contact.
+                        print ('\n')
+                        print(f" {social_acc} Profile created")
+                        print ('\n')
+                    elif short_code == 'dl':
+                        if display_all_social_accounts():
+                            print("Here is a list of all your saved logins")
+                        print('\n')
+                    for social_accounts in display_all_social_accounts():
+                                print(f"Account: {social_accounts.social_account}, Username: {social_accounts.social_account_username}, Password: {social_accounts.social_account_password}")
+                    print('\n')
+                else:
+                        print('\n')
+                        print("No saved social media logins yet")
+                        print('\n')
+            elif short_code == 'sl':
+                        print("Enter the social account type you want to search for")
+                        search_account = input()
+                        if check_existing_accounts(search_account):
+                            search_social_account = find_social_account(search_account)
+                        print(f"{search_social_account.social_account} {search_social_account.social_account_username}")
+                        print('-' * 20)
+                        print(f"Account: {search_social_account.social_account}")
+                        print(f"Username: {search_social_account.social_account_username}")
+            else:
+                        print("That social media account does not exist")
                         print(' ')
-                        print('Enter your credential details:')
-                        social_media = input('Enter the social media name- ').strip()
-                        account_name = input('Enter your social media handle - ').strip()
-                        while True:
-                            print("Use these short codes : \n cl : create new logins, dl : display saved logins, sl : search for a login, ex : exit the Safelock app ")
-                            short_code = input().lower()
-                            if short_code == 'cl':
-                                print("New Social Media Logins")
-                                print("="*40)
-                                print ("Account name e.g twitter,instagram,facebook")
-                                social_acc = input()
-                                print("Account username ...")
-                                acc_username = input()
-                                print("account password ...")
-                                acc_password = input()
-                                print("Account email address ...")
-                                pass_length = input()
-                                save_social_accounts(create_social_account(social_acc,acc_username,acc_password)) # create and save new contact.
-                                print ('\n')
-                                print(f" {social_acc} Profile created")
-                                print ('\n')
-                            elif short_code == 'dl':
-                                if display_all_social_accounts():
-                                    print("Here is a list of all your saved logins")
-                            print('\n')
-                            for social_accounts in display_all_social_accounts():
-                                        print(f"Account: {social_accounts.social_account}, Username: {social_accounts.social_account_username}, Password: {social_accounts.social_account_password}")
-                            print('\n')
-                        else:
-                                print('\n')
-                                print("No saved social media logins yet")
-                                print('\n')
-                    elif short_code == 'sl':
-                                print("Enter the social account type you want to search for")
-                                search_account = input()
-                                if check_existing_accounts(search_account):
-                                    search_social_account = find_social_account(search_account)
-                                print(f"{search_social_account.social_account} {search_social_account.social_account_username}")
-                                print('-' * 20)
-                                print(f"Account: {search_social_account.social_account}")
-                                print(f"Username: {search_social_account.social_account_username}")
-                    else:
-                                print("That social media account does not exist")
-                                print(' ')
-            elif short_code == 'copy':
+        elif short_code == 'copy':
                         print(' ')
                         choose_social_media = input('Enter the social_media name for the credential password to copy: ')
                         copy_credential(choose_social_media)
                         print('Password copied')
-            else:
+        else:
                         print('Sorry! Incorrect option entered. Try again.')
 
     else:
