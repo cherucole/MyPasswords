@@ -119,7 +119,7 @@ def main():
                             else:
                                     print("That social media account does not exist")
         elif short_code == "ex":
-                            print("Bye .......")
+                            print("Thank you for using safelock. Goodbye!")
                             break
         else:
                             print("I really didn't get that. Please use the short codes")
