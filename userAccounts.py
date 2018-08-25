@@ -25,9 +25,9 @@ class UserAccounts:
         Method that checks if the name and password entered match entries in the users_list
         '''
         current_user = ''
-        for user in UserAccounts.users_list:
-            if (user.account_name == account_name and user.account_password == account_password):
-                current_user = user.account_name
+        for user_account in UserAccounts.users_list:
+            if (user_account.account_name == account_name and user_account.account_password == account_password):
+                current_user = user_account.account_name
         return current_user
 
     def delete_user_account(self):

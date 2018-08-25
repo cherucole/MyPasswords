@@ -20,7 +20,7 @@ def save_user_account(user_account):
     :param user_account:
     :return:
     '''
-    user_account.save_user_account
+    UserAccounts.save_user_account(user_account)
 
 
 def user_authentication(account_name, account_password):
@@ -116,12 +116,12 @@ def main():
             print("-"*70)
             print(' ')
             print('To login, enter your safelock account details:')
-            account_name = input('Enter your account name.. ').strip()
-            account_password = str(input('Enter your password.. '))
-            user_exists = user_authentication(account_name,account_password)
-            if user_exists == account_name:
+            account = input('Enter your account name: ').strip()
+            password = str(input('Enter your password: '))
+            user_exists = user_authentication(account,password)
+            if user_exists == account:
                 print(" ")
-                print(f'Welcome {account_name}. Please choose an option to continue.')
+                print(f'Welcome {account}. Please choose an option to continue.')
                 print(' ')
                 while True:
                     print("-"*70)
