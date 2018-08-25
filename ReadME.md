@@ -1,4 +1,4 @@
-# Password Generator App
+# Password Generator App {Safelock}
 
 #### 24-Aug-2018
 
@@ -30,7 +30,16 @@ You will need to:
 
 ## Development
 
-Run the python main file from the terminal to interact with the app.
+| Behaviour | Input | Output |
+| :---------------- | :---------------: | ------------------: |
+| Display codes for navigation | **In terminal: $./exec.py** | Welcome, choose an option: ca-Create Account, li-Log In, ex-Exit |
+| Display prompt for creating an account | **Enter: ca** | Enter your first name, last name and password |
+| Display prompt for login in | **Enter: li** | Enter your account name and password |
+| Display codes for navigation | **Successful login** | Choose an option: cl - Create logins, dl - Display logins, sl- search logins, ex - exit |
+| Display prompt for creating a login | **Enter: cl** | Enter the social media name, your username, account email and password (can be auto-generated) |
+| Display a list of credentials | **Enter: dl** | Prints a list of saved credentials |
+| Search logins | **Enter: sl** | Enter the social media name of the credential you wish to search. |
+| Exit application | **Enter: ex** | Exit the current navigation stage |
 
 ## Built With
 

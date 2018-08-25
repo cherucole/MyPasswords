@@ -137,10 +137,6 @@ def main():
                         social_acc = input()
                         print("Account username ...")
                         acc_username = input()
-                        # print("account password ...")
-                        # acc_password = input()
-                        # print("Account email address ...")
-                        # pass_length = input()
                         while True:
                             print(' ')
                             print("-" * 70)
@@ -165,7 +161,7 @@ def main():
                         print ('\n')
 
                     elif short_code == 'sl':
-                        print("Enter the social account type you want to search for")
+                        print("Enter the social account type you want to search for e.g twitter, facebook etc")
                         search_account = input()
                         if check_existing_accounts(search_account):
                             search_social_account = find_social_account(search_account)
@@ -188,21 +184,12 @@ def main():
                 else:
                         print("That social media account does not exist")
                         print(' ')
-        elif short_code == 'copy':
-                        print(' ')
-                        choose_social_media = input('Enter the social_media name for the credential password to copy: ')
-                        copy_credential(choose_social_media)
-                        print('Password copied')
         else:
-                        print('Sorry! Incorrect option entered. Try again.')
+                        print('Sorry! Use provided short codes and try again.')
 
     else:
                 print(' ')
-                print('Sorry! Incorrect details entered. Try again or Create an Account.')
+                print('Sorry! Use provided short codes and try again or Create an Account.')
 
-# else:
-#             print("-"*70)
-#             print(' ')
-#             print('Sorry! Incorrect option entered. Try again.')
 if __name__ == '__main__':
     main()
