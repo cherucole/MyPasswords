@@ -48,13 +48,11 @@ def display_user_accounts():
     return UserAccounts.display_user_accounts()
 
 
-
-
-def create_social_account(account, username, password, passlength):
+def create_social_account(account, username, password):
     '''
     function to create a new social account details
     '''
-    new_social_account=SocialAccounts(account, username, password, passlength)
+    new_social_account=SocialAccounts(account, username, password)
     return new_social_account
 
 def save_social_accounts(social_account):
@@ -113,7 +111,7 @@ def main():
                             acc_password = input()
                             print("Account email address ...")
                             pass_length = input()
-                            save_social_accounts(create_social_account(social_acc,acc_username,acc_password,pass_length)) # create and save new contact.
+                            save_social_accounts(create_social_account(social_acc,acc_username,acc_password)) # create and save new contact.
                             print ('\n')
                             print(f" {social_acc} Profile created")
                             print ('\n')
