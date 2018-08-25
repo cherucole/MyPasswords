@@ -78,52 +78,6 @@ def main():
     user_name = input()
     print(f"Hello {user_name}. what would you like to do?")
     print('\n')
-
-    while True:
-        print("""Use these short codes:
-                  create - create new safelock account
-                  login - log in to your safelock account
-                  logout - log out of your safelock account
-                  exit - exit safelock app.""")
-        short_code = input().lower()
-        print("_" * 100)
-        if short_code == "create":
-            print("New Password Locker Account")
-            print("_" * 20)
-
-            print("Enter first name -")
-            f_name = input()
-
-            print("Enter last name -")
-            l_name = input()
-
-            print("""
-                      We can generate a password for you. Use:
-                      g- to generate a password
-                      m- to set your own.
-                      """)
-            pass_code = input().lower()
-            print("__" * 20)
-            if pass_code == "g":
-                password_length = int(
-                    input("How long do you want your password - "))
-                password = password_gen(password_length)
-                print(f"Your new password is {password}")
-            else:
-                print("Write a password of your own. We'll store it for you")
-                password = input()
-
-            save_users(create_user(f_name, l_name, password))
-
-            print("")
-            print(
-                f"""New account created for - {f_name} {l_name} your account password is - {password}""")
-            print("")
-            print("You can now create your password profiles")
-
-
-
-
     while True:
         print("Use these short codes : \n cl : create new logins, dl : display saved logins, sl : search for a login, ex : exit the Safelock app ")
         short_code = input().lower()
@@ -136,7 +90,7 @@ def main():
                             acc_username = input()
                             print("account password ...")
                             acc_password = input()
-                            print("Email address ...")
+                            print("Account email address ...")
                             pass_length = input()
                             save_social_accounts(create_social_account(social_acc,acc_username,acc_password,pass_length)) # create and save new contact.
                             print ('\n')
@@ -147,7 +101,7 @@ def main():
                                     print("Here is a list of all your saved logins")
                                     print('\n')
                                     for social_accounts in display_all_social_accounts():
-                                            print(f"{social_accounts.social_account} {social_accounts.social_account_username} {social_accounts.social_account_password}")
+                                            print(f"Account: {social_accounts.social_account}, Username: {social_accounts.social_account_username}, Password: {social_accounts.social_account_password}")
                                     print('\n')
                             else:
                                     print('\n')
@@ -160,10 +114,10 @@ def main():
                                     search_social_account = find_social_account(search_account)
                                     print(f"{search_social_account.social_account} {search_social_account.social_account_username}")
                                     print('-' * 20)
-                                    print(f"Account.......{search_social_account.social_account}")
-                                    print(f"Account Username.......{search_social_account.social_account_username}")
+                                    print(f"Account: {search_social_account.social_account}")
+                                    print(f"Username: {search_social_account.social_account_username}")
                             else:
-                                    print("That social meddia account does not exist")
+                                    print("That social media account does not exist")
         elif short_code == "ex":
                             print("Bye .......")
                             break
