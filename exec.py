@@ -126,7 +126,11 @@ def main():
                 while True:
                     print("Use these short codes : \n cl : create new logins, dl : display saved logins, sl : search for a login, ex : exit the Safelock app ")
                     short_code = input().lower()
-                    if short_code == 'cl':
+                    if short_code=='ex':
+                        print(" ")
+                        print(f"Thank you for using Safelock {account}")
+                        break
+                    elif short_code == 'cl':
                         print("New Social Media Logins")
                         print("="*40)
                         print ("Account name e.g twitter,instagram,facebook")
