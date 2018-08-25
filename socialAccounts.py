@@ -1,11 +1,15 @@
 import pyperclip
+import random
+import string
+
 class SocialAccounts:
+
     """
         Class that generates new instances of user accounts
         """
     social_accounts_list = []  # Empty users list
 
-    def __init__(self, social_account, social_account_username, social_account_password, password_length):
+    def __init__(self, social_account, social_account_username, social_account_password):
         '''
         __init__ method that helps us define properties for our objects.
         '''
@@ -13,7 +17,7 @@ class SocialAccounts:
         self.social_account=social_account
         self.social_account_username = social_account_username
         self.social_account_password = social_account_password
-        self.password_length= password_length
+        # self.password_length= password_length
 
     def save_social_account(self):
         '''
@@ -26,6 +30,17 @@ class SocialAccounts:
         creating the method that deletes the account
         '''
         SocialAccounts.social_accounts_list.remove(self)
+
+    def generate_acc_password(self):
+        '''
+        Function to generate random passwords for social media accounts
+        '''
+        pass_length = string.printable
+        length = int(input('Enter password length in numbers: '))
+        auto_password = ''
+        for char in range(length):
+            auto_password += random.choice(pass_length)
+        return auto_password
 
     @classmethod
     def find_account_by_name(cls,social_account):
@@ -52,6 +67,8 @@ class SocialAccounts:
         method that now returns the stored social accounts logins
         '''
         return cls.social_accounts_list
+
+
 
     # @classmethod
     # def copy_username(cls,social_account):

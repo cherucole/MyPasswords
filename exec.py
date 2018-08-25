@@ -1,15 +1,17 @@
 #!/usr/bin/env python3.7
+import pyperclip
+
 from socialAccounts import SocialAccounts
 from userAccounts import UserAccounts
 
-def create_user_accounts(your_name, your_password):
+def create_user_accounts(account_name,account_password):
     '''
     to allow us create users to login and use the system
     :param your_name:
     :param your_password:
     :return:
     '''
-    new_user_account = UserAccounts(your_name, your_password)
+    new_user_account = UserAccounts(account_name, account_password)
     return new_user_account
 
 def save_user_accounts(user_account):
@@ -19,6 +21,25 @@ def save_user_accounts(user_account):
     :return:
     '''
     user_account.save_user_account
+
+
+def user_authentication(account_name, account_password):
+    '''
+    to check user logins and log the user to the system
+    :param your_name:
+    :param your_password:
+    :return:
+    '''
+    confirm_app_user=UserAccounts.confirm_app_user(account_name, account_password)
+    return confirm_app_user
+
+def auto_password_generation():
+    '''
+    automatically generate the user password
+    :return:
+    '''
+    auto_password=SocialAccounts.generate_acc_password()
+    return auto_password
 
 def display_user_accounts():
     """
