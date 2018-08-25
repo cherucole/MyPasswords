@@ -99,11 +99,11 @@ def main():
         print(' ')
         print("-"*70)
         print('Use these codes to navigate: \n ca-Create Password Locker Account \n li-Log Into Password Locker to access your credentials \n ex-Exit')
-    short_code = input('Enter an option: ').lower().strip()
-    if short_code == 'ex':
+        short_code = input('Enter an option: ').lower().strip()
+        if short_code == 'ex':
             break
 
-    elif short_code == 'ca':
+        elif short_code == 'ca':
             print("-"*70)
             print(' ')
             print('To create a new password locker account:')
@@ -112,7 +112,7 @@ def main():
             save_user_account(create_user_accounts(account_name,account_password))
             print(" ")
             print(f'New Password Locker Account Created for: {account_name} ')
-    elif short_code == 'li':
+        elif short_code == 'li':
             print("-"*70)
             print(' ')
             print('To login, enter your password locker account details:')
@@ -157,42 +157,42 @@ def main():
                                 print ('\n')
                             elif short_code == 'dl':
                                 if display_all_social_accounts():
-                                print("Here is a list of all your saved logins")
+                                    print("Here is a list of all your saved logins")
                             print('\n')
                             for social_accounts in display_all_social_accounts():
                                         print(f"Account: {social_accounts.social_account}, Username: {social_accounts.social_account_username}, Password: {social_accounts.social_account_password}")
-                                print('\n')
+                            print('\n')
                         else:
                                 print('\n')
                                 print("No saved social media logins yet")
                                 print('\n')
-                            elif short_code == 'sl':
+                    elif short_code == 'sl':
                                 print("Enter the social account type you want to search for")
                                 search_account = input()
                                 if check_existing_accounts(search_account):
-                                search_social_account = find_social_account(search_account)
+                                    search_social_account = find_social_account(search_account)
                                 print(f"{search_social_account.social_account} {search_social_account.social_account_username}")
                                 print('-' * 20)
                                 print(f"Account: {search_social_account.social_account}")
                                 print(f"Username: {search_social_account.social_account_username}")
-                        else:
+                    else:
                                 print("That social media account does not exist")
-                            print(' ')
-                    elif short_code == 'copy':
+                                print(' ')
+            elif short_code == 'copy':
                         print(' ')
                         choose_social_media = input('Enter the social_media name for the credential password to copy: ')
                         copy_credential(choose_social_media)
                         print('Password copied')
-                    else:
+            else:
                         print('Sorry! Incorrect option entered. Try again.')
 
-            else:
+    else:
                 print(' ')
                 print('Sorry! Incorrect details entered. Try again or Create an Account.')
 
-        else:
-            print("-"*70)
-            print(' ')
-            print('Sorry! Incorrect option entered. Try again.')
+# else:
+#             print("-"*70)
+#             print(' ')
+#             print('Sorry! Incorrect option entered. Try again.')
 if __name__ == '__main__':
     main()
