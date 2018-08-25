@@ -94,11 +94,11 @@ def display_all_social_accounts():
 
 def main():
     print(' ')
-    print('Jambo! Welcome to Password Locker.')
+    print('Hello & Welcome to safelock!')
     while True:
         print(' ')
         print("-"*70)
-        print('Use these codes to navigate: \n ca-Create Password Locker Account \n li-Log Into Password Locker to access your credentials \n ex-Exit')
+        print('Use these codes to navigate: \n ca-Create a new Safelock Account \n li-Log Into Safelock account to access your logins \n ex-Exit')
         short_code = input('Enter an option: ').lower().strip()
         if short_code == 'ex':
             break
@@ -106,18 +106,18 @@ def main():
         elif short_code == 'ca':
             print("-"*70)
             print(' ')
-            print('To create a new password locker account:')
-            account_name = input('Enter your name - ').strip()
-            account_password = input('Enter your password - ').strip()
+            print('To create a new safelock account:')
+            account_name = input('Enter your name.. ').strip()
+            account_password = input('Enter your password..').strip()
             save_user_account(create_user_accounts(account_name,account_password))
             print(" ")
-            print(f'New Password Locker Account Created for: {account_name} ')
+            print(f'New safelock account created for: {account_name} ')
         elif short_code == 'li':
             print("-"*70)
             print(' ')
-            print('To login, enter your password locker account details:')
-            account_name = input('Enter your first name - ').strip()
-            account_password = str(input('Enter your password - '))
+            print('To login, enter your safelock account details:')
+            account_name = input('Enter your account name.. ').strip()
+            account_password = str(input('Enter your password.. '))
             user_exists = user_authentication(account_name,account_password)
             if user_exists == account_name:
                 print(" ")
